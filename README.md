@@ -9,4 +9,3 @@ java ServidorWeb
 ```
 
 ![Imagen Descriptiva](https://raw.githubusercontent.com/RicardoValladares/Java-WebSocket/main/Funcionando.png)
-
