@@ -8,4 +8,4 @@ java ServidorWeb
 
 ```
 
-![Imagen Descriptiva](https://raw.githubusercontent.com/RicardoValladares/Java-WebSocket/main/Funcionando.png)
+![Imagen Descriptiva](https://raw.githubusercontent.com/RicardoValladares/Java/main/25-%20WebSocket/Funcionando.png)
