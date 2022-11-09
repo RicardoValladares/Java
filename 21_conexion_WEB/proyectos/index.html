@@ -1,0 +1,47 @@
+<html> 
+	<head> 
+		<script type="text/javascript">
+			/*variables globales para la conexion de envio y recepcion*/
+			var xmlhttp;
+			if(window.XMLHttpRequest){xmlhttp=new XMLHttpRequest();}
+			else{xmlhttp=new ActibeXObject("Microsoft.XMLHTTP");}
+			/*funcion para mostrar*/
+			function mostrar(){
+				xmlhttp.open("GET","insertarymostrar.php?nombre=&apellido=",true);
+				xmlhttp.send();
+				xmlhttp.onreadystatechange=function(){
+					if(xmlhttp.readyState==4){
+						document.formulario.datos.value=xmlhttp.responseText;
+						setTimeout('mostrar()',1000); //actualizar cada segundo
+					}
+				}
+			}
+			/*funcion para insertar*/		
+			function insertar(){
+				var nombre=document.formulario.nombre.value;
+				var apellido=document.formulario.apellido.value;
+				if(nombre!="" && apellido!=""){
+					xmlhttp.open("GET","insertarymostrar.php?nombre="+nombre+"&apellido="+apellido,true);
+					xmlhttp.send();
+					xmlhttp.onreadystatechange=function(){
+						if(xmlhttp.readyState==4 && xmlhttp.status==200){
+							document.formulario.datos.value=xmlhttp.responseText;
+							document.formulario.nombre.value="";
+							document.formulario.apellido.value="";
+						}
+					}
+				}
+				if(nombre==""){document.getElementById("nombre").style.border = "1px solid red";}
+				if(nombre!=""){document.getElementById("nombre").style.border = "none";}
+				if(apellido==""){document.getElementById("apellido").style.border = "1px solid red";}
+				if(apellido!=""){document.getElementById("apellido").style.border = "none";}
+			}
+		</script> 
+	</head>
+	<body bgColor="black" text="#80FF00" onload="mostrar()"> 
+		<form name="formulario"> 
+			Nombre: <input type="text" name="nombre" id="nombre"> Apellido: <input type="text" name="apellido" id="apellido"> <input type="button" value="Enviar" onclick="insertar()"> <br><br>
+			<textarea name="datos" rows="10" cols="75"></textarea>
+		</form>
+	</body> 
+</html>
