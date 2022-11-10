@@ -9,4 +9,4 @@ java WebcamPanelWithImageSupllierExample
 
 ```
 
-![Captura de Pantalla](https://raw.githubusercontent.com/RicardoValladares/Java/main/24-%20WebCam/capturadeunodetantosejemplos.png)
+![Captura de Pantalla](https://raw.githubusercontent.com/RicardoValladares/Java/main/24%20WebCam/capturadeunodetantosejemplos.png)
